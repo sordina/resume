@@ -1,6 +1,6 @@
-require 'heroku-sinatra-app'
+require 'pinocchio'
 
 ## There is no need to set directories here anymore;
 ## Just run the application
 
-run Sinatra::Application
+run Pinocchio::Application
