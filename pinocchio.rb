@@ -7,6 +7,7 @@
 #
 require 'rubygems'
 require 'sinatra'
+require 'haml'
 
 module Pinocchio
   class Application < Sinatra::Base
