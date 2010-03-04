@@ -1,3 +1,3 @@
 require 'pinocchio'
 
-run Pinocchio::Application
+run Sinatra::Application

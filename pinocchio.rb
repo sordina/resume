@@ -1,34 +1,37 @@
-# You'll need to require these if you
-# want to develop while running with ruby.
-# The config/rackup.ru requires these as well
-# for it's own reasons.
+### General application dependencies
 #
-# $ ruby heroku-sinatra-app.rb
+require 'lib/environment'
+
+### Sinatra-Application specific dependencies
 #
-require 'rubygems'
 require 'sinatra'
 require 'haml'
+require 'sass'
 
-module Pinocchio
-  class Application < Sinatra::Base
+### Set up the application
+#
 
-    helpers do
-      include Rack::Utils
-      alias_method :h, :escape_html
+### Sinatra::Base applications need options set explicitly.
+#
+# See: http://www.sinatrarb.com/configuration.html
+#
+enable  :run, :show_errors, :static, :logging, :method_override, :clean_trace
+disable :raise_errors
 
-      def protected! username, password
-        unless authorized? username, password
-          response['WWW-Authenticate'] = %(Basic realm="iPortfolio")
-          throw(:halt, [401, "Not authorized\n"])
-        end
-      end
+set :app_file, __FILE__
+set :public,  'public'
+set :views,   'views'
 
-      def authorized? username, password
-        @auth ||=  Rack::Auth::Basic::Request.new(request.env)
-        @auth.provided? && @auth.basic? && @auth.credentials && @auth.credentials == [username, password]
-      end
-		end
-
-		load 'routes/resume.rb'
-	end
+error do
+	halt 500, "Oops an error!"
 end
+
+not_found do
+	halt 404, "Oops no such file!"
+end
+
+get '/css/:name.css' do
+	sass :"css/#{name}"
+end
+
+load 'routes/resume.rb'
