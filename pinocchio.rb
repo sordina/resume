@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 ### General application dependencies
 #
 require 'lib/environment'
