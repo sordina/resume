@@ -5,7 +5,7 @@ require 'rack'
 require 'sinatra'
 require 'haml'
 require 'sass'
-require 'flickr_fu'
+require 'vendor/flickr_fu-0.3.0/lib/flickr_fu.rb'
 
 ### Applicaiton gems
 #
