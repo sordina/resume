@@ -3,7 +3,7 @@ require 'rack'
 require 'sinatra'
 
 cwd     = File::dirname(__FILE__)
-vendors = File::join cwd, 'vendor/*/lib'
+vendors = Dir[File::join cwd, 'vendor/*/lib']
 
 vendors.each do |path|
 	$LOAD_PATH.push path
