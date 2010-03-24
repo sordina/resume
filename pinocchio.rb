@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
+require 'rubygems'
+require 'sinatra'
 require 'lib/environment'
 
 enable :method_override, :clean_trace
