@@ -24,12 +24,14 @@ set :app_file, __FILE__
 set :public,  'public'
 set :views,   'views'
 
-error do
-	halt 500, "Oops an error!"
+error Exception do
+	#halt 500, "Oops an error!"
+	"lol"
 end
 
 not_found do
-	halt 404, "Oops no such file!"
+	#halt 404, "Oops no such file!"
+	"wut"
 end
 
 get '/css/:name.css' do
@@ -37,3 +39,7 @@ get '/css/:name.css' do
 end
 
 load 'routes/resume.rb'
+
+get /.*/ do
+	raise Sinatra::NotFound, "Wargle wargle!"
+end
