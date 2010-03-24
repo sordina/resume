@@ -20,7 +20,15 @@ not_found do
 end
 
 get '/css/site_images.css' do
-	@images = FlickrAPI.photos.search :tags => 'resumé', :is_commons => true
+	@images = FlickrAPI.photos.search(
+		:media => 'photo',
+		:per_page => 4,
+		:content_type => 1,
+		:safe_search => 1
+
+		# :tags => 'resumé' #
+		# :is_commons => true
+	)
 	erb :"css/site_images"
 end
 
