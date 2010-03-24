@@ -1,6 +1,11 @@
 %html
   %head
-    %title Welcome to the Web of
-      %em Lies
+    %title= @title || "Welcome to the Web of lies"
+    %link{:href => '/css/site.css',        :rel => 'stylesheet'}
+    %link{:href => '/css/site_images.css', :rel => 'stylesheet'}
 
-  %body= yield
+  %body
+    #wrapper
+      #header
+      #content= yield
+      #footer

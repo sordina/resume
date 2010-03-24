@@ -1,45 +1,29 @@
 #!/usr/bin/env ruby
 
-### General application dependencies
-#
 require 'lib/environment'
 
-### Sinatra-Application specific dependencies
-#
-require 'sinatra'
-require 'haml'
-require 'sass'
+enable :method_override, :clean_trace
 
-### Set up the application
-#
+### Begin Application
 
-### Sinatra::Base applications need options set explicitly.
-#
-# See: http://www.sinatrarb.com/configuration.html
-#
-enable  :run, :show_errors, :static, :logging, :method_override, :clean_trace
-disable :raise_errors
-
-set :app_file, __FILE__
 set :public,  'public'
 set :views,   'views'
 
 error Exception do
-	#halt 500, "Oops an error!"
-	"lol"
+	haml :error
 end
 
 not_found do
-	#halt 404, "Oops no such file!"
-	"wut"
+	haml :not_found
+end
+
+get '/css/site_images.css' do
+	@images = FlickrAPI.photos.search :tags => 'resumé', :is_commons => true
+	erb :"css/site_images"
 end
 
 get '/css/:name.css' do
-	sass :"css/#{name}"
+	sass :"css/#{params[:name]}" rescue pass
 end
 
 load 'routes/resume.rb'
-
-get /.*/ do
-	raise Sinatra::NotFound, "Wargle wargle!"
-end

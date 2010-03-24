@@ -1,5 +1,3 @@
 get '/' do
-	<<-"EOF"
-		Resume goes here -&gt;
-	EOF
+	haml :"resume/index"
 end
