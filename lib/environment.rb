@@ -6,6 +6,7 @@ require 'sinatra'
 require 'haml'
 require 'sass'
 require 'flickr_fu'
+require 'cgi'
 
 ### Applicaiton gems
 #
