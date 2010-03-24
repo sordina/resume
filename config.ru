@@ -1,6 +1,4 @@
-require 'rubygems'
 require 'rack'
-require 'sinatra'
 
 cwd     = File::dirname(__FILE__)
 vendors = Dir[File::join cwd, 'vendor/*/lib']
