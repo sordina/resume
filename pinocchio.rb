@@ -24,10 +24,8 @@ get '/css/site_images.css' do
 		:media => 'photo',
 		:per_page => 4,
 		:content_type => 1,
-		:safe_search => 1
-
-		# :tags => 'resumé' #
-		# :is_commons => true
+		:safe_search => 1,
+		:is_commons => true
 	)
 	erb :"css/site_images"
 end
