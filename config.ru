@@ -4,9 +4,11 @@ require 'sinatra'
 
 require 'pinocchio'
 
-cwd    = File::dirname(__FILE__)
-vendor = File::join cwd, 'vendor'
+cwd     = File::dirname(__FILE__)
+vendors = File::join cwd, 'vendor/*/lib'
 
-$LOAD_PATH.push vendor
+vendors.each do |path|
+	$LOAD_PATH.push vendor
+end
 
 run Sinatra::Application
