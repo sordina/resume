@@ -7,6 +7,7 @@ require 'haml'
 require 'sass'
 require 'flickr_fu'
 require 'cgi'
+require 'pp'
 
 ### Applicaiton gems
 #
