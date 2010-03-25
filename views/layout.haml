@@ -3,7 +3,6 @@
     %title= @title || "Welcome to the Web of lies"
 
     %link{:href => '/css/site.css',        :rel => 'stylesheet'}
-    %link{:href => '/css/lipsum.css',      :rel => 'stylesheet'}
     %link{:href => '/css/site_images.css', :rel => 'stylesheet'}
 
     %link{:rel => 'icon', :href => "images/favicons/popunshift_small.gif", :type => "image/gif"}
@@ -14,5 +13,9 @@
   %body#body
     #wrapper
       #header
+        .flickr
+          %p.flickr
+            Images sourced from
+            %a{:href => "http://flickr.com"} flickr.
       #content= yield
       #footer

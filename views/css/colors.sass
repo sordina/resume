@@ -3,6 +3,7 @@
 !text                = rgb(178,171,145)
 !heading             = rgb(31,7,6)
 !link                = #555
+!hover               = white
 !filler_text_site    = #000c1e
 !filler_text_content = #0a1e2a
 
@@ -14,6 +15,12 @@ h1, h2, h3, h4
 
 a
   :color = !link
+
+  &:hover
+    :color = !hover
+
+#header, #footer
+  :background-color black
 
 html
   body
