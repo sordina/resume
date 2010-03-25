@@ -1,3 +1,6 @@
+/*
+ * This file serves to add stylistic lorem-ipsum text to the page.
+ */
 $(function() {
 	function add_text(element, text) {
 		var body = $("#body")
@@ -5,7 +8,7 @@ $(function() {
 
 		element.css({opacity: 0.01})
 
-		while(text[0] && element.offset().top + element.outerHeight() < body.outerHeight()) {
+		while(text[0] && element.offset().top + element.outerHeight() < body.outerHeight() - 50) {
 			element.append(text.pop() + " ")
 		}
 
