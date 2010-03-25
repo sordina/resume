@@ -10,8 +10,8 @@ $(function() {
 	var difference = body.outerHeight() - offset
 
 	if(difference > 0) {
-		var current = $("#content").css("padding-bottom")
+		var current = Number($("#content").css("padding-bottom").replace(/\D*/,''))
 
-		$("#content").css({"padding-bottom": "" + (current + difference) + "px"})
+		$("#content").css({"padding-bottom": String(current + difference) + "px"})
 	}
 })
