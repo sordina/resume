@@ -1,18 +1,16 @@
 %html
   %head
     %title= @title || "Welcome to the Web of lies"
+
     %link{:href => '/css/site.css',        :rel => 'stylesheet'}
+    %link{:href => '/css/lipsum.css',      :rel => 'stylesheet'}
     %link{:href => '/css/site_images.css', :rel => 'stylesheet'}
 
-  %body
+    - (@javascript || []).each do |script|
+      %script{:src => script, :type => "text/javascript"}
+
+  %body#body
     #wrapper
       #header
       #content= yield
       #footer
-        
-       
-    %p.lipsum#lipsum_l
-      Sed eleifend eleifend tortor. Sed eu sem risus, egestas facilisis mi. Vestibulum vitae massa at odio facilisis facilisis. Curabitur rhoncus sollicitudin luctus. Aenean venenatis placerat eros, sit amet vehicula ante iaculis imperdiet. Vestibulum in nunc in elit lacinia porta. Nullam lobortis iaculis fermentum. Phasellus in quam ac lorem interdum placerat sit amet eu velit. Donec sodales urna in sem convallis mollis. Proin cursus varius arcu, eget fringilla ipsum varius sed. Aliquam rhoncus dapibus urna, id accumsan purus semper sit amet. Nullam ullamcorper ullamcorper quam eu lobortis. Quisque consequat molestie lorem, ac scelerisque sem iaculis in. Duis in mi augue.
-
-    %p.lipsum#lipsum_r
-      Nullam eu facilisis diam. Donec varius sapien lacus, a congue diam. Maecenas malesuada augue at nulla tincidunt nec auctor felis sodales. Aliquam lobortis ullamcorper mauris, non ultrices tellus pharetra id. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam tempor augue sit amet mi aliquam ut imperdiet velit tempor. Maecenas odio enim, fringilla eget tristique eu, ultrices id lorem. Integer ut nisi orci, id ultrices elit. Proin egestas dignissim augue sed facilisis. Fusce accumsan semper tristique. Donec lectus ligula, fermentum eget dictum nec, pretium sit amet ipsum. Maecenas congue rutrum felis vitae faucibus. Integer ac ipsum nibh. Nunc nec mi nisi, ornare porta turpis. Nullam orci ipsum, fermentum sit amet consequat eget, aliquam eu nibh. Sed convallis ornare consequat. Aliquam accumsan ipsum suscipit urna lobortis sagittis sodales ante imperdiet. Phasellus ultrices consectetur metus, viverra faucibus massa molestie id. Suspendisse tincidunt nisl a odio tempor ac interdum metus varius. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 

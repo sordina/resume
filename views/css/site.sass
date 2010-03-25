@@ -1,3 +1,5 @@
+@import views/css/colors.sass
+
 html, body
   :padding 0
   :margin 0
@@ -20,45 +22,17 @@ li
   :font-family monospace
 
 a
-  :color #555
   :text-decoration none
 
-.lipsum
-  :color #091929
-  :position absolute
-  :font-weight bold
-
 html
-  :background-color #012
+  :background-color = !site_background
   
-  #outer
-    :overflow hidden
-
-  #lipsum_l
-    :color #000c1e
-    :bottom -200px
-    :left 10px
-    :width 220px
-    :font-size 25px
-    :text-align left
-    :z-index -1
-
-  #lipsum_r
-    :color #000c1e
-    :bottom -100px
-    :right 15px
-    :width 200px
-    :font-size 40px
-    :text-align right
-    :z-index -1
-
   #wrapper
     :width 750px
     :margin-left auto
     :margin-right auto
     :border-left 3px solid black
     :border-right 15px solid black
-    :overflow hidden
 
     #header, #footer
       :height 130px
@@ -68,37 +42,6 @@ html
       :padding 4px
       :padding-left 25px
       :padding-bottom 50px
-      :background-color #123
+      :background-color = !content_background
       :position relative
-
-      #lipsum_nw
-        :color #0d1c2a
-        :top 0px
-        :left 4px
-        :width 600px
-        :font-size 8px
-        :text-align center
-
-      #lipsum_ne
-        :color #0f1e2d
-        :top 70px
-        :left -60px
-        :width 240px
-        :font-size 11px
-        :text-align right
-
-      #lipsum_se
-        :color #0a1e2a
-        :bottom 0px
-        :right -150px
-        :width 300px
-        :font-size 14px
-        :text-align left
-
-      #lipsum_sw
-        :color #0a1b2c
-        :bottom -30px
-        :left -150px
-        :width 300px
-        :font-size 7px
-        :text-align left
+      :overflow hidden

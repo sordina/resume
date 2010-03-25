@@ -1,0 +1,24 @@
+!site_background     = #012
+!content_background  = #123
+!text                = rgb(178,171,145)
+!heading             = rgb(31,7,6)
+!link                = #555
+!filler_text_site    = #000c1e
+!filler_text_content = #0a1e2a
+
+*
+  :color = !text
+
+h1, h2, h3, h4
+  :color = !heading
+
+a
+  :color = !link
+
+html
+  body
+    #lipsum_r, #lipsum_l
+      :color = !filler_text_site
+
+    #lipsum_nw, #lipsum_ne, #lipsum_se, #lipsum_sw
+      :color = !filler_text_content
