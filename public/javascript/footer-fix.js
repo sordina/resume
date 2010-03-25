@@ -9,9 +9,13 @@ $(function() {
 	var offset = footer.offset().top + footer.outerHeight()
 	var difference = body.outerHeight() - offset
 
-	if(difference > 0) {
-		var current = Number($("#content").css("padding-bottom").replace(/\D*/,''))
+	if(difference >= 0) {
+		var current_string = $("#content").css("padding-bottom")
+		var current = Number(current_string.replace('px',''))
+		var padding_string = String(current + difference) + "px"
 
-		$("#content").css({"padding-bottom": String(current + difference) + "px"})
+		console.log([current_string, current, padding_string])
+
+		$("#content").css({"padding-bottom": padding_string})
 	}
 })
