@@ -13,6 +13,10 @@ require 'pp'
 #
 require 'lib/database'
 
+Dir['lib/model/*'].each do |model_path|
+	require model_path
+end
+
 ### Flickr
 #
 FlickrAPI = Flickr.new 'config/flickr/flickr.yml'
