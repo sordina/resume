@@ -1,6 +1,6 @@
 ### Required vendor paths
 #
-Dir[File::join File::dirname(__FILE__), '..', 'vendor/*/lib'].each do |path|
+Dir[File::join(File::dirname(__FILE__), '..', 'vendor/*/lib')].each do |path|
 	$LOAD_PATH.push path
 end
 
