@@ -14,7 +14,7 @@ end
 
 before do
 	@javascript ||= []
-	@javascript << '/javascript/jquery-1.4.2.min.js']
+	@javascript << '/javascript/jquery-1.4.2.min.js'
 	@javascript << '/javascript/lipsum.js'
 	@css ||= []
 end
