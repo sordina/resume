@@ -1,0 +1,38 @@
+%h1 Admin
+%h2 Administer this motherfucker
+
+- if @error
+  .error
+    %h3= CGI::escapeHTML @error.message
+
+%h3 New term
+
+%form{:method => "post"}
+  %table
+    %tr
+      %td.key
+        Term name
+      %td.value
+        %input{:type => "text", :id => "term", :name => "term", :value => @v[:term]}
+
+    %tr
+      %td.key
+        Term description
+      %td.value
+        %textarea{:name => "description"}= @v[:description] 
+
+  %input{:type => "submit", :name => "submit", :value => "create"}
+
+
+%h3 All terms
+
+%ul
+  - Term.all.each do |term|
+    %li= CGI::escapeHTML term.inspect
+
+
+%h3 All definitions
+
+%ul
+  - Definition.all.each do |definition|
+    %li= CGI::escapeHTML definition.inspect

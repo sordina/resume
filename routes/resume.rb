@@ -1,14 +1,7 @@
 helpers do
-	def h string
-		CGI::escapeHTML string
-	end
-
 	def k string
 		# Knowledge.search string
-		"<a href='/search/#{h string}'>#{h string}</a>"
-	end
-
-	def search
+		"<a href='/search/#{CGI::escapeHTML string}'>#{CGI::escapeHTML string}</a>"
 	end
 end
 

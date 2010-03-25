@@ -1,6 +1,7 @@
 !site_background     = #012
 !content_background  = #123
 !text                = rgb(178,171,145)
+!code                = rgb(255,116,0)
 !heading             = rgb(31,7,6)
 !link                = #555
 !hover               = white
@@ -18,6 +19,9 @@ a
 
   &:hover
     :color = !hover
+
+.code, .error, .error *
+  :color = !code
 
 #header, #footer
   :background-color black
