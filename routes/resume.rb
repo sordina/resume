@@ -12,7 +12,7 @@ end
 before do
 	@javascript ||= ['javascript/jquery-1.4.2.min.js']
 	@javascript << 'javascript/lipsum.js'
-	@javascript << 'javascript/footer-fix.js'
+	# @javascript << 'javascript/footer-fix.js'
 end
 
 get '/' do
