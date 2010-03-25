@@ -11,6 +11,9 @@ enable :method_override, :clean_trace
 set :public,  'public'
 set :views,   'views'
 
+mime_type :css, 'text/css'
+mime_type :js,  'text/javascript'
+
 error Exception do
 	haml :error
 end
@@ -27,10 +30,12 @@ get '/css/site_images.css' do
 		:safe_search => 1,
 		:is_commons => true
 	)
+	content_type :css
 	erb :"css/site_images"
 end
 
 get '/css/:name.css' do
+	content_type :css
 	sass :"css/#{params[:name]}" rescue pass
 end
 

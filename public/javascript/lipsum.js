@@ -14,7 +14,7 @@ $(function() {
 		element.animate({opacity: 1.0}, 15000)
 	}
 
-	jQuery.get('text/lipsum.txt', function(lipsum) {
+	jQuery.get('/text/lipsum.txt', function(lipsum) {
 		var paras = lipsum.split(/\n\n/)
 
 		jQuery.each(['nw','ne','sw','se'], function(index, item){

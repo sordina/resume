@@ -10,9 +10,9 @@ helpers do
 end
 
 before do
-	@javascript ||= ['javascript/jquery-1.4.2.min.js']
-	@javascript << 'javascript/lipsum.js'
-	# @javascript << 'javascript/footer-fix.js'
+	@javascript ||= ['/javascript/jquery-1.4.2.min.js']
+	@javascript << '/javascript/lipsum.js'
+	@css ||= []
 end
 
 get '/' do
@@ -20,10 +20,14 @@ get '/' do
 end
 
 get '/search' do
+	@javascript << '/javascript/search.js'
+	@css << '/css/search.css'
 	haml :"resume/search"
 end
 
 get '/search/:term' do
+	@javascript << '/javascript/search.js'
+	@css << '/css/search.css'
 	haml :"resume/search"
 end
 

@@ -1,2 +1,29 @@
 %h1
   Search
+
+%h2
+  Lyndon Maydwell
+
+%form{}
+  %p
+    %input#search{:name => "term", :type => "text", :value => @term}
+
+- unless @results
+  %p
+    What drives a searcher to search for a
+    %em search
+    term?
+
+  %p
+    Is it the
+    %strong power
+    that
+    %em search
+    brings?
+    Is it the raw unadulterated glory of the
+    %em search
+    results?
+
+  %p
+    It is all this and
+    %em more!
