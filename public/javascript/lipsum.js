@@ -4,7 +4,6 @@
 $(function() {
 	function add_text(element, text) {
 		var body = $("#body")
-		console.log([element.offset().top, element.outerHeight(), body.outerHeight()])
 
 		element.css({opacity: 0.01})
 
