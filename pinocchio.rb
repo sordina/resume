@@ -11,8 +11,6 @@ enable :method_override, :clean_trace
 set :public,  'public'
 set :views,   'views'
 
-mime_type(:css, 'text/css')
-mime_type(:js,  'text/javascript')
 
 error Exception do
 	haml :error
