@@ -11,6 +11,13 @@ enable :method_override, :clean_trace
 set :public,  'public'
 set :views,   'views'
 
+### Helpers
+
+Dir['lib/helpers/*.rb'].each do |helper_path|
+	load helper_path
+end
+
+### Hooks
 
 error Exception do
 	haml :error
@@ -19,6 +26,8 @@ end
 not_found do
 	haml :not_found
 end
+
+### Routes
 
 get '/css/site_images.css' do
 	@images = FlickrAPI.photos.search(
@@ -37,4 +46,6 @@ get '/css/:name.css' do
 	sass :"css/#{params[:name]}" rescue pass
 end
 
-load 'routes/resume.rb'
+Dir['routes/*.rb'].each do |route_group_path|
+	load route_group_path
+end
