@@ -1,3 +1,9 @@
+### Required vendor paths
+#
+vendors.each do |path|
+	$LOAD_PATH.push path
+end
+
 ### System gems
 #
 require 'rubygems'
