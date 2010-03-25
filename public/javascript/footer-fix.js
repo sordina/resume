@@ -9,9 +9,9 @@ $(function() {
 	var offset = footer.offset().top + footer.outerHeight()
 	var difference = body.outerHeight() - offset
 
-	alert(difference)
-
 	if(difference > 0) {
-		$("#content").css({"padding-bottom": "+"+difference+"px"})
+		var current = $("#content").css("padding-bottom")
+
+		$("#content").css({"padding-bottom": "" + (current + difference) + "px"})
 	}
 })
